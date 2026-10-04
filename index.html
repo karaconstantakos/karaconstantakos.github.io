@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kara Constantakos | CRM &amp; Marketing Operations</title>
+  <meta name="description" content="Kara Constantakos — CRM, marketing operations, and sales operations leader in professional sports.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14213d;
+      --text: #3a4256;
+      --muted: #6b7286;
+      --bg: #fbf9f5;
+      --card: #ffffff;
+      --line: #e7e2d8;
+      --accent: #b5674d;
+      --accent-soft: #f4e7e1;
+      --max: 1040px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Inter", system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.65; font-size: 17px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; color: var(--ink); line-height: 1.2; font-weight: 600; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; background: rgba(251,249,245,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .logo { font-family: "Fraunces", serif; font-weight: 600; color: var(--ink); font-size: 20px; }
+    .links { display: flex; gap: 28px; list-style: none; }
+    .links a { color: var(--text); font-size: 15px; font-weight: 500; }
+    .links a:hover { color: var(--accent); text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 110px 0 90px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(40px, 6vw, 64px); max-width: 800px; margin-bottom: 24px; }
+    .hero p { font-size: 20px; max-width: 640px; color: var(--muted); margin-bottom: 36px; }
+    .btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; }
+    .btn-primary { background: var(--ink); color: #fff; }
+    .btn-outline { border: 1.5px solid var(--ink); color: var(--ink); }
+    .btn:hover { text-decoration: none; opacity: .88; }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 70px; }
+    .stat { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+    .stat strong { display: block; font-family: "Fraunces", serif; font-size: 34px; color: var(--ink); }
+    .stat span { font-size: 15px; color: var(--muted); }
+
+    /* Sections */
+    section { padding: 80px 0; border-top: 1px solid var(--line); }
+    section h2 { font-size: 36px; margin-bottom: 36px; }
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+    .about-grid p + p { margin-top: 16px; }
+    .photo { aspect-ratio: 4/5; border-radius: 14px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 14px; font-weight: 500; text-align: center; padding: 20px; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+
+    .job { display: grid; grid-template-columns: 220px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .job:last-child { border-bottom: none; }
+    .job .org { font-weight: 600; color: var(--ink); }
+    .job .org small { display: block; font-weight: 400; color: var(--muted); font-size: 14px; }
+    .job h3 { font-size: 22px; margin-bottom: 10px; }
+    .job ul { padding-left: 20px; }
+    .job li { margin-bottom: 6px; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px; }
+    .card .tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+    .card h3 { font-size: 21px; margin-bottom: 10px; }
+    .card p { font-size: 16px; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skills span { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 15px; font-weight: 500; color: var(--ink); }
+
+    .hh { background: var(--ink); color: #dfe3ee; border-radius: 18px; padding: 48px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; }
+    .hh h2 { color: #fff; margin-bottom: 14px; }
+    .hh .eyebrow { color: #e3a58f; }
+    .hh .btn { background: #fff; color: var(--ink); }
+
+    .contact { text-align: center; }
+    .contact p { max-width: 560px; margin: 0 auto 30px; color: var(--muted); }
+    .contact .btns { justify-content: center; }
+
+    footer { padding: 32px 0; text-align: center; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+
+    /* Mobile */
+    @media (max-width: 760px) {
+      body { font-size: 16px; }
+      .links { display: none; }
+      .hero { padding: 70px 0 60px; }
+      .stats { grid-template-columns: 1fr; }
+      .about-grid, .hh { grid-template-columns: 1fr; }
+      .job { grid-template-columns: 1fr; gap: 10px; }
+      .hh { padding: 32px 24px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="#" class="logo">Kara Constantakos</a>
+      <ul class="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">CRM · Marketing Operations · Sports Business</p>
+      <h1>I turn fan data into campaigns that sell tickets.</h1>
+      <p>I'm a CRM and sales operations leader in professional sports. I build Salesforce Marketing Cloud journeys, run paid media, and connect ticketing, BI, and marketing teams around one view of the fan.</p>
+      <div class="btns">
+        <a href="#work" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>$1M+</strong><span>Annual paid media budget managed</span></div>
+        <div class="stat"><strong>5x+</strong><span>Return on ad spend</span></div>
+        <div class="stat"><strong>2</strong><span>Pro sports organizations (MLS &amp; NHL)</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>About me</h2>
+        <p>I'm the Manager of Sales &amp; Service Operations at Inter Miami CF, where I run email marketing, paid media, Salesforce CRM administration, and Marketing Cloud operations. My work sits where marketing, ticketing, and data meet.</p>
+        <p>Before Miami, I was a CRM Analyst with the Nashville Predators. I like the technical side (SQL, segmentation, HTML email) as much as the strategy. The best campaigns need both.</p>
+        <p>Outside of work, I own and run Higher Horses LLC, an equestrian business here in South Florida.</p>
+      </div>
+      <div class="photo">
+        <!-- To add your photo: put a file named headshot.jpg in this folder, then replace this line with:
+             <img src="headshot.jpg" alt="Kara Constantakos"> -->
+        Your headshot goes here
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="org">Inter Miami CF<small>Major League Soccer · Miami, FL</small></div>
+        <div>
+          <h3>Manager, Sales &amp; Service Operations</h3>
+          <ul>
+            <li>Own email marketing, Salesforce CRM administration, and Salesforce Marketing Cloud operations for ticketing.</li>
+            <li>Manage a $1M+ paid media budget across digital channels, reaching 5x+ ROAS through channel allocation and creative testing.</li>
+            <li>Build automated journeys for season ticket renewals, lead generation, and single-match sales.</li>
+            <li>Work with ticketing, BI, digital, and marketing teams to move fans from first visit to season ticket member.</li>
+          </ul>
+          <p style="margin-top:10px;font-size:15px;color:var(--muted)">Previously Manager, CRM &amp; Marketing Strategy</p>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="org">Nashville Predators<small>National Hockey League · Nashville, TN</small></div>
+        <div>
+          <h3>CRM Analyst</h3>
+          <ul>
+            <li>Supported CRM data, segmentation, and reporting for ticket sales and marketing teams.</li>
+            <li>Built audience lists and campaign reporting in Salesforce and SQL.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Lifecycle email</span>
+          <h3>Season ticket renewal program</h3>
+          <p>A segmented renewal email series for season ticket members, with separate tracks by plan type and a 30-day cadence.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Lead generation</span>
+          <h3>Journeys to leads</h3>
+          <p>Parallel Marketing Cloud journeys that turn match attendees and single-game buyers into qualified leads for the sales team.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Paid media</span>
+          <h3>Stadium &amp; ticketing campaigns</h3>
+          <p>Multi-channel paid campaigns supporting a new stadium and major tournaments, tuned through creative testing to 5x+ ROAS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills &amp; tools</h2>
+      <div class="skills">
+        <span>Salesforce Marketing Cloud</span>
+        <span>Journey Builder</span>
+        <span>Salesforce CRM Admin</span>
+        <span>SQL</span>
+        <span>SOQL</span>
+        <span>HTML Email Development</span>
+        <span>Audience Segmentation</span>
+        <span>Paid Media Strategy</span>
+        <span>Creative Testing</span>
+        <span>Ticketing Operations</span>
+        <span>Sports Marketing</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="hh">
+        <div>
+          <p class="eyebrow">Also running</p>
+          <h2>Higher Horses LLC</h2>
+          <p>My equestrian business in South Florida. A full website for Higher Horses is coming soon.</p>
+        </div>
+        <div style="text-align:right">
+          <!-- When the Higher Horses site is live, change href="#" to its web address -->
+          <a href="#" class="btn">Coming soon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's talk</h2>
+      <p>I'm always happy to connect with people in sports business, CRM, and marketing.</p>
+      <div class="btns">
+        <a href="mailto:karaconstantakos@gmail.com" class="btn btn-primary">Email me</a>
+        <!-- Replace # with your LinkedIn profile URL -->
+        <a href="#" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© 2026 Kara Constantakos</div>
+  </footer>
+
+</body>
+</html>
